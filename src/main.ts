@@ -1,6 +1,6 @@
 import "./pico.min.css";
 import "./style.css";
 
-window.onload = (e: Event) => {
+window.onload = () => {
   document.body.classList.remove("js-loading");
 };
