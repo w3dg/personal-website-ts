@@ -1,3 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  font-family: "Inter", sans-serif !important;
+}
+
+.container {
+  margin-top: 1.5rem;
+}
 .center {
   text-align: center;
+}
+
+.container h1 {
+  animation: dropIn cubic-bezier(0, 0, 0.1, 1) 1 1000ms;
+  animation-fill-mode: forwards;
+  -ms-transform: translate3D(0, 0em, 0);
+  transform: translate3D(0, 0em, 0);
+}
+
+.container p {
+  animation: dropInReverse cubic-bezier(0, 0, 0.1, 1) 1 1000ms;
+  animation-fill-mode: forwards;
+  -ms-transform: translate3D(0, 0em, 0);
+  transform: translate3D(0, 0em, 0);
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+.links a {
+  animation: fadeIn cubic-bezier(0.4, 0, 1, 1) 1 375ms 625ms;
+}
+
+.links a:nth-child(1) {
+  animation-delay: 30ms;
+}
+
+.links a:nth-child(2) {
+  animation-delay: 65ms;
+}
+
+.links a:nth-child(3) {
+  animation-delay: 130ms;
+}
+
+.links a:nth-child(4) {
+  animation-delay: 205ms;
+}
+
+.links a:nth-child(5) {
+  animation-delay: 285ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dropIn {
+  from {
+    transform: translate3D(0, 2em, 0);
+  }
+  to {
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes dropInReverse {
+  from {
+    transform: translate3D(0, 0, 0);
+  }
+  to {
+    transform: translate3D(0, -2em, 0);
+  }
+}
+
+/* disable animations until page has loaded */
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
 }
